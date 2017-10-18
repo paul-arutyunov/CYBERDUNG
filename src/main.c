@@ -28,8 +28,8 @@ int main(int argc, char *argv[])
 
 	int i;
 
-	/* In-shell command line arguments parsing doesn't work. FIXME!!! */
-	for (i = 0; i < ARGS_MAX; i++)
+	/* In-shell command line arguments parsing */
+	for (i = 1; argv[i] != NULL; i++)
 	{
 		if	(strcmp(argv[i], "--debug") == 0 || strcmp(argv[i], "-d") == 0) /* Debug mode */
 			debug = 1;
