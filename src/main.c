@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	/* In-shell command line arguments parsing */
 	for (i = 1; argv[i] != NULL; i++)
 	{
-		if	(strcmp(argv[i], "--debug") == 0 || strcmp(argv[i], "-d") == 0) /* Debug mode (doesn't work. FIXME!)*/
+		if	(strcmp(argv[i], "--debug") == 0 || strcmp(argv[i], "-d") == 0) /* Debug mode */
 			debug = 1;
 		else if	(strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0) /* Help */
 		{
@@ -103,5 +103,5 @@ void parseInput(char *input)
 		word = strtok(NULL, " ");
 		i++;
 	}
-	args[0][strlen(args[0])-1] = '\0';
+	if (args[1] == NULL) args[0][strlen(args[0])-1] = '\0';
 }
