@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 			if (getchar() == 'y') return 0;
 			if (getchar() == 'n') printf("\nOkay.\n");
 		}
-		else if (strcmp(args[0], "make") == 0 && strcmp(args[1], "love") == 0) 
+		else if (strcmp(args[0], "make") == 0 && strcmp(args[1], "love\n") == 0) 
 		{
 			printf("\nNot war.\n");
 		}
