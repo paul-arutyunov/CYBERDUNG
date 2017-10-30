@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "include/monsters.h"
+#include "include/items.h"
+
 #define ARGS_MAX	10
 
 char input[100];
@@ -15,6 +18,13 @@ void parseInput(char *input);
 
 /* Simple random funtion*/
 int rnd(int min, int max);
+
+typedef struct {
+	int hp;
+	int str;
+} Player;
+
+Player p;
 
 int main(int argc, char *argv[])
 {
@@ -104,4 +114,10 @@ void parseInput(char *input)
 		i++;
 	}
 	if (args[1] == NULL) args[0][strlen(args[0])-1] = '\0';
+}
+
+int rnd(int min, int max)
+{
+	srand(time(NULL));
+	return min + rand() % max;
 }
